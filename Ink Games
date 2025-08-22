@@ -1,44 +1,6 @@
 local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
+local player = Players.LocalPlayer
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+local customMessage = "Script is Currently Detected"
 
-local Frame = Instance.new("Frame")
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(1, -420, 1, -120) -- Bottom right
-Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame.BackgroundTransparency = 0.2
-Frame.BorderSizePixel = 0
-Frame.AnchorPoint = Vector2.new(0, 0)
-Frame.Parent = ScreenGui
-
-local UICorner = Instance.new("UICorner", Frame)
-UICorner.CornerRadius = UDim.new(0, 10)
-
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Size = UDim2.new(1, -20, 1, -20)
-TextLabel.Position = UDim2.new(0, 10, 0, 10)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.TextSize = 20
-TextLabel.TextWrapped = true
-TextLabel.Text = "Ink Games has a new Auto Ban Anti Cheat so Script is Disabled for Now"
-TextLabel.Parent = Frame
-
--- Tween for smooth fade-in and fade-out
-Frame.BackgroundTransparency = 1
-TextLabel.TextTransparency = 1
-
-local TweenService = game:GetService("TweenService")
-
-TweenService:Create(Frame, TweenInfo.new(0.5), {BackgroundTransparency = 0.2}):Play()
-TweenService:Create(TextLabel, TweenInfo.new(0.5), {TextTransparency = 0}):Play()
-
--- Wait 15 seconds then fade out and remove
-task.wait(15)
-TweenService:Create(Frame, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
-TweenService:Create(TextLabel, TweenInfo.new(0.5), {TextTransparency = 1}):Play()
-task.wait(0.6)
-ScreenGui:Destroy()
+player:Kick(customMessage)
