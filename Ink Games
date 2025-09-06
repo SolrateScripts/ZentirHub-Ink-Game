@@ -1,6 +1,1 @@
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
 
-local message = "Script is currently Detected"
-
-LocalPlayer:Kick(message)
