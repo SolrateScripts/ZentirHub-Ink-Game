@@ -1,6 +1,8 @@
 local badPlaceId = 99567941238278
+
 if game.PlaceId == badPlaceId then
     game.Players.LocalPlayer:Kick("dont run the script in lobby")
+    return
 end
 
 -- This file was protected using Luraph Obfuscator v14.4.2 [https://lura.ph/]
